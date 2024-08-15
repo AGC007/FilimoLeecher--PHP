@@ -7,6 +7,11 @@ if(isset($_REQUEST['page_url']))
     $Link_SPL = preg_split("/\//" , $_GET['page_url']);
     $MovieKey =  $Link_SPL[4];
 
+    if(strstr($MovieKey , 'm'))
+    {
+        $MovieCode =  $Link_SPL[5];
+    }
+
     FilimoLeecher_v2($MovieKey);
 }
 
